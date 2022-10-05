@@ -1,0 +1,89 @@
+trackSelection = true
+fetchPreview = true
+defaultFlags = 0
+keepOpen = false
+queryFolder = "Assets"
+onBoardingDoNotAskAgain = true
+showPackageIndexes = false
+showStatusBar = false
+scopes = {
+	"last_search.DA949528" = "plast"
+	"OpenInspectorPreview.DA949528" = "0"
+	"currentGroup.DA949528" = "all"
+}
+providers = {
+	adb = {
+		active = false
+		priority = 2500
+		defaultAction = null
+	}
+	asset = {
+		active = true
+		priority = 25
+		defaultAction = null
+	}
+	store = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
+	find = {
+		active = true
+		priority = 25
+		defaultAction = null
+	}
+	log = {
+		active = false
+		priority = 210
+		defaultAction = null
+	}
+	packages = {
+		active = true
+		priority = 90
+		defaultAction = null
+	}
+	performance = {
+		active = false
+		priority = 100
+		defaultAction = null
+	}
+	scene = {
+		active = true
+		priority = 50
+		defaultAction = null
+	}
+}
+objectSelectors = {
+}
+recentSearches = [
+	"sea"
+	"search-ms:"
+	"search-ms:displayn"
+	"search-ms:displayname=Sea"
+	"search-ms:displayname=Search%20Re"
+	"search-ms:displayname=Search%20Results%2"
+	"search-ms:displayname=Search%20Results%20in%20No"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=l"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5C"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5CUsers%5C"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5CUsers%5Ccheck%5C"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5CUsers%5Ccheck%5COneDriv"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5CUsers%5Ccheck%5COneDrive%5CDesk"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5CUsers%5Ccheck%5COneDrive%5CDesktop%5CN"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5CUsers%5Ccheck%5COneDrive%5CDesktop%5CNo%20Evil"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5CUsers%5Ccheck%5COneDrive%5CDesktop%5CNo%20Evil%5CNo-Ev"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5CUsers%5Ccheck%5COneDrive%5CDesktop%5CNo%20Evil%5CNo-Evil%5CNo"
+	"search-ms:displayname=Search%20Results%20in%20No%20Evil&crumb=location:C%3A%5CUsers%5Ccheck%5COneDrive%5CDesktop%5CNo%20Evil%5CNo-Evil%5CNo%20Evil\\"
+]
+searchItemFavorites = [
+]
+savedSearchesSortOrder = 0
+showSavedSearchPanel = false
+expandedQueries = [
+]
+queryBuilder = false
+ignoredProperties = "id;name;classname;imagecontentshash"
+helperWidgetCurrentArea = "all"
+disabledIndexers = ""
