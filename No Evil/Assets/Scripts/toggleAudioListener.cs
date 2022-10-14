@@ -20,25 +20,16 @@ public class toggleAudioListener : MonoBehaviour
         {
             if (!muted)
             {
-                muted = !muted;
                 AudioListener.volume = 0;
                 print("Volume set to " + AudioListener.volume);
 
             }
             else
             {
-                muted = !muted;
                 AudioListener.volume = 1;
                 print("Volume set to " + AudioListener.volume);
             }
+            muted = !muted;
         }
-        
-       /* if (Input.GetKeyDown("g") && muted)
-        {
-            AudioListener.volume = 1;
-            muted = false;
-            print("Volume set to " + AudioListener.volume);
-        }
-       */
     }
 }

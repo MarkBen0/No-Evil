@@ -58,17 +58,8 @@ public class SC_FPSController : MonoBehaviour
 
         if (Input.GetKeyDown("y"))
         {
-
-            if (isImgOn == true)
-            {
-                img.enabled = false;
-                isImgOn = false;
-            }
-            else
-            {
-                img.enabled = true;
-                isImgOn = true;
-            }
+            isImgOn = !isImgOn
+            img.enabled = isImgOn
         }
        
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
