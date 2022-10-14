@@ -14,6 +14,8 @@ public class SC_FPSController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
+    public float Health = .5f;
+    public float Stamina = .5f;
     public bool isImgOn;
     public Image img;
     CharacterController characterController;
