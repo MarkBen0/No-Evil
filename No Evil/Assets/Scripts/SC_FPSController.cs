@@ -14,8 +14,12 @@ public class SC_FPSController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
-    public float Health = .5f;
-    public float Stamina = .5f;
+    public int Max_Health = 100;
+    public int Health;
+    public UIBar healthBar;
+    public int Max_Stamina = 100;
+    public int Stamina;
+    public UIBar staminaBar;
     public bool isImgOn;
     public Image img;
     CharacterController characterController;
@@ -34,6 +38,10 @@ public class SC_FPSController : MonoBehaviour
         Cursor.visible = false;
         img.enabled = true;
         isImgOn = true;
+        Health = Max_Health;
+        healthBar.SetMax(Health);
+        Stamina = Max_Stamina;
+        staminaBar.SetMax(Stamina);
     }
 
     void Update()
@@ -92,5 +100,9 @@ public class SC_FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+        //Health and Stamina
+        //* This is here for demonstrative purposes and should be replaced when we create damage and stamina
+        healthBar.SetValue(Health);
+        staminaBar.SetValue(Stamina);//*/
     }
 }

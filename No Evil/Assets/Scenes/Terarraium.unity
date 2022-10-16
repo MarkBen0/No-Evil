@@ -751,6 +751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605687705}
   - component: {fileID: 605687706}
+  - component: {fileID: 605687707}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -825,24 +826,55 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 6b2ea34b5daa324409984ef626cc02d7, type: 3}
-        m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &605687707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605687704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790f30cd97393324a8c6e1dd6e0ab158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 605687706}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.83137256, g: 0.09019608, b: 0.03529412, a: 1}
+    key1: {r: 0.83137256, g: 0.09019608, b: 0.03529412, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  fill: {fileID: 1505959595}
 --- !u!1 &1156430910
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,8 +929,12 @@ MonoBehaviour:
   playerCamera: {fileID: 1300422420}
   lookSpeed: 2
   lookXLimit: 45
-  Health: 0.5
-  Stamina: 0.5
+  Max_Health: 100
+  Health: 0
+  healthBar: {fileID: 605687707}
+  Max_Stamina: 100
+  Stamina: 0
+  staminaBar: {fileID: 1578285116}
   isImgOn: 0
   img: {fileID: 1632826757}
   canMove: 1
@@ -1639,6 +1675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1578285114}
   - component: {fileID: 1578285115}
+  - component: {fileID: 1578285116}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -1713,12 +1750,55 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1578285116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578285113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790f30cd97393324a8c6e1dd6e0ab158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1578285115}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.83137256, g: 0.69411767, b: 0.03529412, a: 1}
+    key1: {r: 0.83137256, g: 0.69411767, b: 0.03529412, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  fill: {fileID: 1869102896}
 --- !u!1 &1632826755
 GameObject:
   m_ObjectHideFlags: 0
