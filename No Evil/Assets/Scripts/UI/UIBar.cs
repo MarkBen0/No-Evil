@@ -10,7 +10,7 @@ public class UIBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    public void SetMax(int value)
+    public void SetMax(float value)
     {
         slider.maxValue = value;
         slider.value = value;
@@ -18,11 +18,23 @@ public class UIBar : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
     }
 
-    public void SetValue(int value)
+    public void SetValue(float value)
     {
         slider.value = value;
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-
+    
+    public void isVisible(bool visible)
+    {
+        if (visible)
+        {
+            fill.color = gradient.Evaluate(slider.normalizedValue);
+        }
+        else
+        {
+            fill.color = new Color(0f, 0f, 0f, 0f);
+        }
+        
+    }
 }

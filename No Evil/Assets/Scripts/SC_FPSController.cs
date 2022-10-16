@@ -14,11 +14,21 @@ public class SC_FPSController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
-    public int Max_Health = 100;
-    public int Health;
+    public float maxHealth = 100f;
+    private float Health;
     public UIBar healthBar;
-    public int Max_Stamina = 100;
-    public int Stamina;
+    public float maxStamina = 100f;
+    public float Stamina;
+    private float staminaUseMultiplier = 5f;
+    private float timeBeforeStaminaRegenStarts = 5f;
+    private float timeBeforeStaminaBarVanishes = 2f;
+    private float staminaValueIncrement = 2f;
+    private float staminaTimeIncrement = 0.1f;
+    private Coroutine regeneratingStamina;
+    private bool isRunning = false;
+    private bool canRun = true;
+    private float curSpeedX;
+    private float curSpeedY;
     public UIBar staminaBar;
     public bool isImgOn;
     public Image img;
@@ -38,10 +48,11 @@ public class SC_FPSController : MonoBehaviour
         Cursor.visible = false;
         img.enabled = true;
         isImgOn = true;
-        Health = Max_Health;
+        Health = maxHealth;
         healthBar.SetMax(Health);
-        Stamina = Max_Stamina;
+        Stamina = maxStamina;
         staminaBar.SetMax(Stamina);
+        staminaBar.isVisible(false);
     }
 
     void Update()
@@ -50,9 +61,9 @@ public class SC_FPSController : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         // Press Left Shift to run
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+        isRunning = Input.GetKey(KeyCode.LeftShift);
+        curSpeedX = canMove ? (canRun && isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
+        curSpeedY = canMove ? (canRun && isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
@@ -99,10 +110,56 @@ public class SC_FPSController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+
+            HandleStamina();
         }
         //Health and Stamina
-        //* This is here for demonstrative purposes and should be replaced when we create damage and stamina
-        healthBar.SetValue(Health);
-        staminaBar.SetValue(Stamina);//*/
+    }
+    private void HandleStamina()
+    {
+        if (isRunning && ((curSpeedX + curSpeedY) != 0))
+        {
+            staminaBar.isVisible(true);
+            if (regeneratingStamina != null)
+            {
+                StopCoroutine(regeneratingStamina);
+                regeneratingStamina = null;
+            }
+
+            Stamina -= staminaUseMultiplier * Time.deltaTime;
+
+            if (Stamina < 0)
+                Stamina = 0;
+            staminaBar.SetValue(Stamina);
+            if (Stamina <= 0)
+                canRun = false;
+        }
+        if ((!isRunning || ((curSpeedX + curSpeedY) != 0)) && Stamina < maxStamina && regeneratingStamina == null)
+        {
+            regeneratingStamina = StartCoroutine(RegenerateStamina());
+        }
+    }
+
+    private IEnumerator RegenerateStamina()
+    {
+        yield return new WaitForSeconds(timeBeforeStaminaRegenStarts);
+        WaitForSeconds timeToWait = new WaitForSeconds(staminaTimeIncrement);
+        while (Stamina < maxStamina)
+        {
+            if (Stamina > 0)
+                canRun = true;
+
+            Stamina += staminaValueIncrement;
+
+            if (Stamina > maxStamina)
+                Stamina = maxStamina;
+
+            staminaBar.SetValue(Stamina);
+
+            yield return timeToWait;
+        }
+        yield return new WaitForSeconds(timeBeforeStaminaBarVanishes);
+        staminaBar.isVisible(false);
+        regeneratingStamina = null;
     }
 }
