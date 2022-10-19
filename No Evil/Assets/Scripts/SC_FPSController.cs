@@ -14,8 +14,6 @@ public class SC_FPSController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
-    public bool isImgOn;
-    public Image img;
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
@@ -30,8 +28,6 @@ public class SC_FPSController : MonoBehaviour
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        img.enabled = true;
-        isImgOn = true;
     }
 
     void Update()
@@ -54,21 +50,6 @@ public class SC_FPSController : MonoBehaviour
         else
         {
             moveDirection.y = movementDirectionY;
-        }
-
-        if (Input.GetKeyDown("y"))
-        {
-
-            if (isImgOn == true)
-            {
-                img.enabled = false;
-                isImgOn = false;
-            }
-            else
-            {
-                img.enabled = true;
-                isImgOn = true;
-            }
         }
        
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
