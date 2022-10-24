@@ -76,6 +76,21 @@ public class SC_FPSController : MonoBehaviour
         {
             moveDirection.y = movementDirectionY;
         }
+
+        if (Input.GetKeyDown("y"))
+        {
+
+            if (isImgOn == true)
+            {
+                img.enabled = false;
+                isImgOn = false;
+            }
+            else
+            {
+                img.enabled = true;
+                isImgOn = true;
+            }
+        }
        
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
