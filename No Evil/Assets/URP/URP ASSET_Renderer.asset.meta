@@ -1,13 +1,8 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:No Evil/Assets/URP/URP ASSET_Renderer.asset.meta
 guid: 0d9b9283e555aa44faac145cc77703b5
 NativeFormatImporter:
-========
-guid: 894667acd156fa842a69c12cf2a76a3e
-folderAsset: yes
-DefaultImporter:
->>>>>>>> origin/Mark:No Evil/Assets/Particles.meta
   externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
