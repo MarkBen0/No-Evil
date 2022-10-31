@@ -1,0 +1,27 @@
+
+private void EnableSense()
+{
+  if(SenseTree != null)
+    SenseTree.SetActive(true);
+  }
+
+private void DisableSense()
+ {
+  if(SenseTree != null)
+    SenseTree.SetActive(false);
+    }
+    
+private float Area(Vector2 v1, Vector2 v2, Vector 2 v3)
+{
+  return mathf.Abs(f:(v1.x *(v2.y - v3.y) + v2.x * (v3.y - v1.y) + v3.x * (v1.y - v2/.y)) / 2f);
+  }
+  
+private bool IsInside(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v)
+{
+  float A = Area(v1, v2, v3);
+  float A1 = Area(v1, v2, v);
+  float A2 = Area(v1, v, v3);
+  float A3 = Area(v, v2, v3);
+  
+  return (Mathf.Abs(f:A1 + A2 + A3 - A) < 1f);
+  }
