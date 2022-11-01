@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-=======
 <<<<<<<< HEAD:No Evil/Assets/AllSkyFree.meta
-guid: 566850a5874ab492a9f73c4dd1168a37
+guid: c80ad4c07e6ce4d1b9dfeee0895d3fa8
 ========
->>>>>>> Stashed changes
 guid: db430af455f712642a0d84ef269d19c9
+>>>>>>>> origin/Mark:No Evil/Assets/Images.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

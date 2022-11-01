@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-=======
 <<<<<<<< HEAD:No Evil/Assets/URP/URP ASSET_Renderer.asset.meta
-guid: 549c1f04c2ac04015aa0216fdb6b7cb8
+guid: 0eae3eb1f7da745608d8545234f327d8
 NativeFormatImporter:
 ========
->>>>>>> Stashed changes
 guid: 894667acd156fa842a69c12cf2a76a3e
 folderAsset: yes
 DefaultImporter:
+>>>>>>>> origin/Mark:No Evil/Assets/Particles.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

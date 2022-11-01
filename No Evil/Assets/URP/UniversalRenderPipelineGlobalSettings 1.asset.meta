@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-=======
 <<<<<<<< HEAD:No Evil/Assets/URP/UniversalRenderPipelineGlobalSettings 1.asset.meta
-guid: 140238c08b4b24ad9a59299c65622e60
+guid: 307b7b2a5ec9c40a6a2416986692b8be
 NativeFormatImporter:
 ========
->>>>>>> Stashed changes
 guid: f54d1bd14bd3ca042bd867b519fee8cc
 folderAsset: yes
 DefaultImporter:
+>>>>>>>> origin/Mark:No Evil/Assets/TextMesh Pro.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
