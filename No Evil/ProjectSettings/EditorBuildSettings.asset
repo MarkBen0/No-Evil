@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Terarraium.unity
+    guid: 2a8f649d2b7cd9d42933453f14da3d7e
   m_configObjects: {}

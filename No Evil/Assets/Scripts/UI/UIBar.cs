@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIBar : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class UIBar : MonoBehaviour
         slider.value = value;
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
+        if (slider.value <= 0)
+        {
+            SceneManager.LoadScene("Terrarium");
+        }
     }
     
     public void isVisible(bool visible)

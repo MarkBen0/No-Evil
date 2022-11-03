@@ -9,7 +9,11 @@ public class baseEnemyAI : MonoBehaviour
 
     public Transform player;
 
-    public float health;
+    //Attributes
+    public AttributeManager enemyAtm;
+    public AttributeManager playerAtm;
+    public UIBar playerHealth;
+
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -105,9 +109,10 @@ public class baseEnemyAI : MonoBehaviour
         if (!alreadyAttacked)
         {
             //Attack code here
-            
+            enemyAtm.DealDamage(playerAtm.gameObject);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            playerHealth.SetValue(playerAtm.health);
         }
     }
 
@@ -116,11 +121,14 @@ public class baseEnemyAI : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        health -= damage;
+        playerAtm.DealDamage(enemyAtm.gameObject);
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        if (enemyAtm.health <= 0)
+        {
+            DestroyEnemy();
+        }
     }
 
     private void DestroyEnemy()
