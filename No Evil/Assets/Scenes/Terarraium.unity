@@ -2564,6 +2564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAtm: {fileID: 351255066}
   enemyAtm: {fileID: 1552733802}
+  enemy: {fileID: 1552733799}
 --- !u!4 &1867377727
 Transform:
   m_ObjectHideFlags: 0

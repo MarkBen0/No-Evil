@@ -26,7 +26,7 @@ public class UIBar : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
         if (slider.value <= 0)
         {
-            SceneManager.LoadScene("Terrarium");
+            SceneManager.LoadScene("Terarraium");
         }
     }
     
