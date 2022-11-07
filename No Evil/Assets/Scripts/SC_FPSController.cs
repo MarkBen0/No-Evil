@@ -30,7 +30,7 @@ public class SC_FPSController : MonoBehaviour
     private float curSpeedX;
     private float curSpeedY;
     public UIBar staminaBar;
-    public bool isImgOn;
+    //public bool isImgOn;
     public Image img;
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -47,7 +47,7 @@ public class SC_FPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         img.enabled = true;
-        isImgOn = true;
+        //isImgOn = false;
         Health = maxHealth;
         healthBar.SetMax(Health);
         Stamina = maxStamina;
@@ -77,19 +77,23 @@ public class SC_FPSController : MonoBehaviour
             moveDirection.y = movementDirectionY;
         }
 
-        if (Input.GetKeyDown("y"))
+        if (Input.GetKey("q"))
         {
-
-            if (isImgOn == true)
+            img.enabled = true;
+            /*if (isImgOn == true)
             {
                 img.enabled = false;
-                isImgOn = false;
+                //isImgOn = false;
             }
             else
             {
                 img.enabled = true;
-                isImgOn = true;
-            }
+                //isImgOn = true;
+            }*/
+        }
+        else
+        {
+            img.enabled = false;
         }
        
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
