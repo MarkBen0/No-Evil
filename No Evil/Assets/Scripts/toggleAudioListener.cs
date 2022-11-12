@@ -34,6 +34,9 @@ public class toggleAudioListener : MonoBehaviour
         /*everyLayer = LayerMask.NameToLayer("Smells");
         Debug.Log(everyLayer + "hi");
         smellLayer = LayerMask.NameToLayer("Smells");*/
+        setSight(true);
+        setHearing(false);
+        setSmell(false);
     }
 
     void Update()

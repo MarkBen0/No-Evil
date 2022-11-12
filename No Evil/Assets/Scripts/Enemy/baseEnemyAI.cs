@@ -9,6 +9,9 @@ public class baseEnemyAI : MonoBehaviour
 
     public Transform player;
 
+    Renderer rend;
+    MeshRenderer meshRenderer;
+
     //Attributes
     public AttributeManager enemyAtm;
     public AttributeManager playerAtm;
@@ -30,11 +33,18 @@ public class baseEnemyAI : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+    public bool invisible = false;
+    public Material invisibleMat;
+    private Material[] EnemyTexture;
 
     private void Awake()
     {
         player = GameObject.Find("CapsuleCorp").transform; 
         agent = GetComponent<NavMeshAgent>();
+        rend = GetComponent<Renderer>();
+        meshRenderer = GetComponent<MeshRenderer>();
+        EnemyTexture = rend.materials;
+        SetInvisible(invisible);
     }
 
     private void Update()
@@ -142,6 +152,25 @@ public class baseEnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    private void SetInvisible(bool isInvis)
+    {
+        for(int i = 0; i < EnemyTexture.Length; i++)
+        {
+            Debug.Log(EnemyTexture[i].name);
+        }
+        
+        if (isInvis)
+        {
+            rend.material = invisibleMat;
+            meshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        }
+        else
+        {
+            rend.materials = EnemyTexture;
+            meshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+        }
     }
 }
 
